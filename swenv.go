@@ -29,6 +29,12 @@ func main() {
 				},
 				Action: commands.SwitchEnvFile,
 			},
+			{
+				Name:    "list",
+				Aliases: []string{"ls"},
+				Usage:   "List all available .env files",
+				Action:  commands.ListEnvFiles,
+			},
 		},
 	}
 
