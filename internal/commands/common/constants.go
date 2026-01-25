@@ -3,6 +3,6 @@ package common
 const (
 	BaseEnvFile     = ".env"
 	CustomEnvPrefix = ".env."
-	BackupSuffix    = ".swenvbackup"
+	BackupEnvFile   = ".swenv.envbackup"
 	ExampleSuffix   = ".example"
 )
