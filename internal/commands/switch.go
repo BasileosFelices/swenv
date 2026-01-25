@@ -41,7 +41,7 @@ func SwitchEnvFile(ctx context.Context, cmd *cli.Command) error {
 		if err != nil {
 			return cli.Exit(fmt.Sprintf("Failed to backup current .env file: %v", err), 1)
 		}
-		fmt.Println("Backed up current .env to .env.backup")
+		fmt.Println("Backed up current .env to " + common.BackupEnvFile)
 	}
 
 	srcFile := common.CustomEnvPrefix + envName // ".env.<env>"
