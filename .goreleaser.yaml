@@ -34,3 +34,17 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
+
+homebrew_casks:
+  - name: swenv
+    repository:
+      owner: BasileosFelices
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    directory: Casks
+    homepage: https://github.com/BasileosFelices/swenv
+    description: "Quickly switch between different .env environment files"
+    license: MIT
+    binaries:
+      - swenv
+    commit_msg_template: "chore: update {{ .ProjectName }} to v{{ .Tag }}"
