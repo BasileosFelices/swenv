@@ -1,13 +1,23 @@
 package commands
 
-import "github.com/urfave/cli/v3"
+import (
+	"context"
+
+	"github.com/urfave/cli/v3"
+)
 
 // NewRootCommand builds the CLI root command for swenv.
 func NewRootCommand() *cli.Command {
 	return &cli.Command{
-		Name:   "swenv",
-		Usage:  "Quickly manage multiple .env files in a project",
-		Action: ListEnvFiles,
+		Name:  "swenv",
+		Usage: "Quickly manage multiple .env files in a project",
+		Action: func(ctx context.Context, cmd *cli.Command) error {
+			// If arguments are provided, default is switch command
+			if cmd.Args().Len() > 0 {
+				return SwitchEnvFile(ctx, cmd)
+			}
+			return ListEnvFiles(ctx, cmd)
+		},
 		Commands: []*cli.Command{
 			{
 				Name:    "switch",

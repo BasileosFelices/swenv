@@ -31,7 +31,9 @@ func copyFile(src string, dst string) error {
 func SwitchEnvFile(ctx context.Context, cmd *cli.Command) error {
 
 	envName := cmd.StringArg("name")
-	if envName == "" {
+	if envName == "" && cmd.Args().Len() > 0 {
+		envName = cmd.Args().First()
+	} else if envName == "" {
 		return cli.Exit("Please provide the name of the env environment to switch to", 1)
 	}
 
