@@ -19,6 +19,18 @@ To upgrade:
 brew upgrade swenv
 ```
 
+### Scoop (Windows)
+
+```powershell
+scoop bucket add BasileosFelices https://github.com/BasileosFelices/scoop-bucket
+scoop install swenv
+```
+
+To upgrade:
+```powershell
+scoop update swenv
+```
+
 ### Go install
 
 ```bash

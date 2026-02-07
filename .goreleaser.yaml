@@ -48,3 +48,14 @@ homebrew_casks:
     binaries:
       - swenv
     commit_msg_template: "chore: update {{ .ProjectName }} to v{{ .Tag }}"
+
+scoops:
+  - name: swenv
+    repository:
+      owner: BasileosFelices
+      name: scoop-bucket
+      token: "{{ .Env.SCOOP_BUCKET_GITHUB_TOKEN }}"
+    homepage: https://github.com/BasileosFelices/swenv
+    description: "Quickly switch between different .env environment files"
+    license: MIT
+    commit_msg_template: "chore: update {{ .ProjectName }} to v{{ .Tag }}"
